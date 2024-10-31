@@ -1,0 +1,31 @@
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+#grid-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	aspect-ratio: 1 / 1;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	gap: .25%;
+	/* padding: 10px; */
+}
+
+.grid {
+	flex: 1 1 calc(100% / var(--grid-count));
+	aspect-ratio: 1 / 1;
+	border: 1px solid #ddd;
+}
+
+#sizeButton {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background-color: purple;
+	color: white;
+}
