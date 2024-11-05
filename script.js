@@ -2,7 +2,7 @@ function createGrid(gridNbr) {
 	let i = -1;
 	let grid = document.getElementById("grid-container");
 
-	if (document.getElementsByClassName("grid")) destroyGrid();
+	grid.innerHTML = "";
 	while (++i < gridNbr) {
 		let newDiv = document.createElement("div");
 		newDiv.className = "grid";
@@ -20,10 +20,6 @@ function createGrid(gridNbr) {
 	);
 }
 
-function destroyGrid() {
-	
-}
-
 function changeOpacity(newDiv) {
 	let newOpacity = parseFloat(newDiv.getAttribute("data-opacity"));
 	if (newOpacity < 1.0) {
@@ -34,7 +30,7 @@ function changeOpacity(newDiv) {
 }
 
 function changeGridSize() {
-	let size = prompt("Please enter the desired width of the grid:");
+	let size = prompt("Please enter the desired width (<= 100) of the grid:");
 	if (size <= 100) createGrid(size * size);
 	else return alert("Grid is too big. Please enter a number lower than 100!");
 }
